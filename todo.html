@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="todo.css">
+    <title>TODO List</title>
+</head>
+<body>
+    <div id="myDiv" class = "header">
+        <h2>ToDo List!</h2>
+        <label for="addNewTodo">
+            <p style="font-size: 15px; text-align: center;">Write down your task...</p>
+            <input type="text" id = "myInput">
+            <span class="addbtn" onclick="newToDo()">Add</span>
+        </label>
+    </div>
+    <ul id="myUl">
+    </ul>
+    <button type="button" id="clear-todo" onclick="removeAll()">Clear All ToDos</button>
+
+    <script type="text/javascript" src="todo.js"></script>
+</body>
+</html>
