@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+body{
+    margin: 150px auto ;
+    justify-content: center;
+    justify-items: center;
+    max-width: 75%;
+    min-width: 550px;
+    font-family: 'Quattrocento', serif;
+}
+img{
+    height: 12%;
+    width: 7%;
+    opacity: 0.8;
+}
+img:hover{
+    height:14%;
+    width:9%;
+    opacity: 1;
+}
+.header{
+    padding: 30px 40px;
+    text-align: center;
+    background-color: #0d8fa3;
+    color: whitesmoke;
+}
+h1:hover{
+    color: #bdd5d9;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+label > p:hover{
+    color: #bdd5d9;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+input[id="myInput"]{
+    margin-right: 2%;
+    width: 70%;
+    height: 40px;
+    padding-left: 20px;
+    border: none;
+    border-bottom: 2px solid #bdd5d9;
+    border-radius: 10px;
+    background: none;
+    font-family: 'Quattrocento', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: whitesmoke;
+}
+input:hover{
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+.addbtn{
+    cursor: pointer;
+    margin-left: 1%;
+    width: 25%;
+    height: 40px;
+    border: none;
+    background: none;
+    font-family: 'Quattrocento', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: whitesmoke;
+}
+.addbtn:hover{
+    background-color: whitesmoke;
+    color: crimson;
+    border-radius: 24px;
+    transition: 0.5s;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+    padding: 10px;
+    height: 70px;
+    border-bottom: 1px solid #ebebeb;
+    overflow: hidden;
+}
+li:nth-child(even){
+    background-color: #0d8fa3;
+    color: whitesmoke;
+}
+li:hover{
+    background-color: #ebebeb;
+    transition: 0.3s;
+}
+li:nth-child(even):hover{
+    color: black;
+}
+
+li  label{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 10px;
+    display: inline-flex;
+}
+li > input[type="text"]{
+    width: 75%;
+    height: 50px;
+    background: none;
+    border: 1px solid #bababa ;
+    border-radius: 15px;
+    font-family: 'Quattrocento', serif;
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 8px;
+}
+li > input[type="text"]:focus{
+    color: black;
+}
+.edit{
+    cursor: pointer;
+    position: relative;
+    float: right;
+    right: 12%;
+    top: 2px;
+    padding: 9px;
+    opacity: 0.6;
+}
+.edit:hover{
+    opacity: 1;
+    color: #01036e;
+}
+.close{
+    cursor: pointer;
+    position: relative;
+    float: right;
+    top: 2px;
+    padding: 10px 13px;
+    color: crimson; 
+}
+.close:hover{
+    background-color: #c91818;
+    color: whitesmoke;
+    transition: 0.5s;
+}
+ul li.checked{
+    background-color: rgb(204, 202, 202);
+    color: white;
+    text-decoration: line-through;
+}
+
+
+#clear-todo{
+    width: 34%;
+    margin: 40px 35%;
+    height: 50px;
+    justify-content: center;
+    padding: 5px 30px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: crimson;
+    border-radius: 5px;
+    color: crimson;
+}
+#clear-todo:hover{
+    background-color: crimson;
+    color:whitesmoke;
+    transition: 0.3s;
+}
+
+/* Edit Task */
+
+ul li input[type="text"]{
+    display: none;
+}
+
+ul li.editMode input[type=text] {
+    display: inline-block;
+} 
+ul li.editMode input[type=text]:nth-child(odd){
+    color: #6b5858;
+}
+
+ul li.editMode label {
+	display: none;
+} 
