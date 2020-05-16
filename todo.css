@@ -1,25 +1,29 @@
 *{
+    font-family: 'Quattrocento',serif;
     box-sizing: border-box;
     border-radius: 15px;
 }
-
 body{
-    margin: 150px auto ;
-    justify-content: center;
-    justify-items: center;
-    max-width: 75%;
-    min-width: 550px;
-    font-family: 'Quattrocento', serif;
+    margin: 50px auto ;
+    font-size: 22px;
 }
+
+main{
+    max-width: 820px;
+    margin: 10px auto;
+    border: 1px solid rgb(235, 233, 233);
+    border-radius: 10px;
+    padding: 10px;
+}
+
 img{
     height: 12%;
     width: 7%;
-    opacity: 0.8;
+    opacity: 1;
 }
 img:hover{
     height:14%;
     width:9%;
-    opacity: 1;
 }
 .header{
     padding: 30px 40px;
@@ -46,7 +50,6 @@ input[id="myInput"]{
     border-bottom: 2px solid #bdd5d9;
     border-radius: 10px;
     background: none;
-    font-family: 'Quattrocento', serif;
     font-size: 22px;
     font-weight: 500;
     color: whitesmoke;
@@ -63,7 +66,6 @@ input:hover{
     height: 40px;
     border: none;
     background: none;
-    font-family: 'Quattrocento', serif;
     font-size: 22px;
     font-weight: 900;
     color: whitesmoke;
@@ -75,11 +77,47 @@ input:hover{
     transition: 0.5s;
 }
 
+#search{
+    margin: 20px auto;
+    margin-bottom: 0;
+    padding: 3px;
+    padding-left: 10px;
+    font-size: 22px;
+    font-weight: 100;
+    width: 100%;
+    background: none;
+    border: 1px solid #bdd5d9;
+    color: whitesmoke;
+}
+::placeholder{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+#first-todo{
+    display: block;
+}
+#first-todo h3{
+    color: coral;
+    text-align: center;
+}
+#first-todo img{
+    display: block;
+    margin: 0 auto;
+    height: 60%;
+    width: 70%;
+}
+
 ul{
     margin: 0;
     padding: 0;
 }
 li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     list-style-type: none;
     padding: 10px;
     height: 70px;
@@ -99,7 +137,6 @@ li:nth-child(even):hover{
 }
 
 li  label{
-    font-size: 22px;
     font-weight: 600;
     text-align: center;
     justify-content: center;
@@ -111,21 +148,19 @@ li > input[type="text"]{
     width: 75%;
     height: 50px;
     background: none;
-    border: 1px solid #bababa ;
-    border-radius: 15px;
-    font-family: 'Quattrocento', serif;
+    border: none ;
     font-size: 22px;
     font-weight: 600;
     padding-left: 8px;
 }
-li > input[type="text"]:focus{
-    color: black;
+
+.functionality{
+    display: flex;
+    justify-content: space-between;
 }
 .edit{
     cursor: pointer;
     position: relative;
-    float: right;
-    right: 12%;
     top: 2px;
     padding: 9px;
     opacity: 0.6;
@@ -137,7 +172,6 @@ li > input[type="text"]:focus{
 .close{
     cursor: pointer;
     position: relative;
-    float: right;
     top: 2px;
     padding: 10px 13px;
     color: crimson; 
@@ -155,7 +189,6 @@ ul li.checked{
 
 
 #clear-todo{
-    width: 34%;
     margin: 40px 35%;
     height: 50px;
     justify-content: center;
@@ -190,3 +223,47 @@ ul li.editMode input[type=text]:nth-child(odd){
 ul li.editMode label {
 	display: none;
 } 
+
+
+@media only screen  and (max-width: 460px){
+    body{
+        margin: 20px auto;
+        font-size: 12px;
+    }
+    main{
+        max-width: 320px;
+    }
+    input[id="myInput"]{
+        font-size: 12px;
+    }
+    .addbtn{
+        font-size: 14px;
+    }
+    .addbtn:hover{
+        border-radius: 5px;
+    }
+    #search{
+        font-size: 12px;
+        border: 0.4px solid #bdd5d9;
+    }
+    ::placeholder{
+        font-size: 10px;
+    }
+    #clear-todo{
+        margin: 20px 70px;
+        height: 30px;
+        font-size: 12px;
+    }
+    li{
+        height: 40px;
+    }
+    li>input[type="text"]{
+        
+        font-size: 12px;
+    }
+    img{
+        height: 30px;
+        width: 32px;
+        opacity: 0.85;
+    }
+}
