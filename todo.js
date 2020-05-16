@@ -1,4 +1,3 @@
-
 // Adding a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
 list.addEventListener('click', function (click) {
@@ -7,6 +6,8 @@ list.addEventListener('click', function (click) {
     }
 },false);
 
+var ulList = document.getElementsByTagName('ul')[0].innerHTML;
+var firstTodo = document.getElementById('first-todo');
 
 // Adding new todos to the list
 function newToDo(){
@@ -35,14 +36,17 @@ function newToDo(){
     // Creating close btn and edit btn and appending it to the newly formed list
     var span = document.createElement("SPAN");
     var span1 = document.createElement("SPAN");
+    var span2 = document.createElement("SPAN");
     var txt = document.createTextNode("\u270E");
     var txt1 = document.createTextNode("\u292B");
-    span.className = "edit";
-    span1.className = "close";
-    span.appendChild(txt);
-    span1.appendChild(txt1);
+    span.id = 'functionality';
+    span1.className = "edit";
+    span2.className = "close";
+    span1.appendChild(txt);
+    span2.appendChild(txt1);
+    span.appendChild(span1);
+    span.appendChild(span2);
     li.appendChild(span);
-    li.appendChild(span1);
 
     // On clicking close btn - delete todo
     var close = document.getElementsByClassName("close");
@@ -65,12 +69,15 @@ input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         newToDo();
     }
+    firstTodo.style.display = 'none';
 })
+
 
 // Clearing todos
 function removeAll() {
     var lst = document.getElementsByTagName("ul");
     lst[0].innerHTML = "";
+    firstTodo.style.display = 'block';
 }
 // editing todos
 var editTodo = function () {
@@ -78,7 +85,7 @@ var editTodo = function () {
     console.log("Change 'edit' to 'save'");
 
 
-    var li = this.parentNode;
+    var li = this.parentElement.parentElement;
 
     var editInput = li.querySelector('input[type=text]');
     var label = li.querySelector("label");
@@ -98,3 +105,21 @@ var editTodo = function () {
 }
 
 
+var itemList = document.getElementsByTagName('ul')[0];
+
+var search = document.getElementById('search');
+search.addEventListener('keyup', searchItems);
+
+// search items
+function searchItems(){
+    var text = search.value.toLowerCase();
+    var items = itemList.querySelectorAll('label');
+    Array.from(items).forEach(function(item){
+        var itemName =  item.textContent;
+        if(itemName.toLowerCase().indexOf(text) != -1){
+            item.parentElement.style.display = 'flex';
+        }else{
+            item.parentElement.style.display = 'none';
+        }
+    });
+}
