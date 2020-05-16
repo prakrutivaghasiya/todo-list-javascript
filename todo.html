@@ -8,22 +8,27 @@
     <title>TODO List</title>
 </head>
 <body>
-    <div id="myDiv" class = "header">
-        <h1>ToDo List!</h1>
-        <img src="list-icon.png" alt="list icon" srcset="" />
-        <label for="addNewTodo">
-            <p>Whats on your agenda today?</p>
-            <br>             
-            <input type="text" id = "myInput" />
-            <button type="button" class="addbtn" onclick="newToDo()">Add</button>
-        </label>
-    </div>
+    <main id='main'>
+        <div id="myDiv" class="header">
+            <h1>ToDo List!</h1>
+            <img src="list-icon.png" alt="list icon" srcset="" />
+            <label for="addNewTodo">
+                <p>Whats on your agenda today?</p>
+                <br>
+                <input type="text" id="myInput" />
+                <button type="button" class="addbtn" onclick="newToDo()">Add</button>
+            </label>
+            <form><input id="search" type="text" placeholder="Search ToDos..." /></form>
+        </div>
+        <div id="first-todo">
+            <h3>Enter Your First ToDo!</h3>
+            <img src="https://t4.ftcdn.net/jpg/03/31/12/23/240_F_331122338_FqDE7NvVAPq0cJzBQgWrZotAhDnl6CSC.jpg" alt="Enter your ToDos...">
+        </div>
+        <ul id="myUl" class="myUL"></ul>
+        
+        <button type="button" id="clear-todo" onclick="removeAll()">Clear All ToDos</button>
+    </main>
     
-    <ul id="myUl" class="myUL">
-       
-    </ul>
-
-    <button type="button" id="clear-todo" onclick="removeAll()">Clear All ToDos</button>
 
     <script type="text/javascript" src="todo.js"></script>
 </body>
